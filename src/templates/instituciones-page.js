@@ -1,28 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
-import HomePageTemplate from '../components/HomePageTemplate'
+import InstitucionesPageTemplate from '../components/InstitucionesPageTemplate'
 import Layout from '../components/Layout'
 
-const HomePage = ({data}) => {
+const InstitucionesPage = ({data}) => {
   const {frontmatter} = data.markdownRemark
 
   return (
     <Layout>
-      <HomePageTemplate
+      <InstitucionesPageTemplate
         title={frontmatter.title}
         meta_title={frontmatter.meta_title}
         meta_description={frontmatter.meta_description}
-        heading={frontmatter.heading}
-        description={frontmatter.description}
-        offerings={frontmatter.offerings}
-        testimonials={frontmatter.testimonials}
+        financianList={frontmatter.financianList}
+        desarrollanList={frontmatter.desarrollanList}
+        apoyanList={frontmatter.apoyanList}
       />
     </Layout>
   )
 }
 
-HomePage.propTypes = {
+InstitucionesPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -30,27 +29,26 @@ HomePage.propTypes = {
   }),
 }
 
-export default HomePage
+export default InstitucionesPage
 
-export const pageQuery = graphql`
-  query IndexPage($id: String!) {
+export const institucionesQuery = graphql`
+  query InstitucionesPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        logo
         meta_title
         meta_description
-        heading
-        description
-        offerings {
-          blurbs {
-            image
-            text
-          }
+        financianList{
+          img
+          url
         }
-        testimonials {
-          author
-          quote
+         desarrollanList{
+          img
+          url
+        }
+        apoyanList{
+          img
+          url
         }
       }
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, graphql, StaticQuery} from 'gatsby'
 import SearchBox from '../SearchBox'
-
+import logo from '../../assets/img/logo.png'
 const NavBar = ({toggleNavbar, isActive}) => (
   <StaticQuery
     query={graphql`
@@ -15,7 +15,7 @@ const NavBar = ({toggleNavbar, isActive}) => (
       <nav className='navbar is-fixed-top' aria-label='main navigation'>
         <div className='navbar-brand'>
           <Link to='/' className='navbar-item'>
-            <strong>Gatsby Starter Business</strong>
+            <img alt='' src={logo}/>
           </Link>
           <button
             className={`button navbar-burger ${isActive ? 'is-active' : ''}`}
@@ -30,15 +30,21 @@ const NavBar = ({toggleNavbar, isActive}) => (
         <div className={`navbar-menu ${isActive ? 'is-active' : ''}`} id='navMenu'>
 
           <div className='navbar-end'>
-            <SearchBox searchIndex={data.siteSearchIndex.index} />
-            <Link className='navbar-item' to='/about'>
-                            About
+            {/*<SearchBox searchIndex={data.siteSearchIndex.index} />*/}
+            <Link className='navbar-item' to='/objetivos'>
+              Objetivos
             </Link>
-            <Link className='navbar-item' to='/pricing'>
-                            Pricing
+            <Link className='navbar-item' to='/resultadosEsperados'>
+              Resultados esperados
+            </Link>
+            <Link className='navbar-item' to='/instituciones'>
+              Instituciones
             </Link>
             <Link className='navbar-item' to='/blog'>
-                            Blog
+              Equipo
+            </Link>
+            <Link className='navbar-item' to='/blog'>
+              Resultados
             </Link>
             <div className='navbar-item'>
               <div className='field is-grouped'>
@@ -46,7 +52,7 @@ const NavBar = ({toggleNavbar, isActive}) => (
                   <Link
                     className='button is-primary is-outlined'
                     to='/contact'>
-                            Contact Us
+                    Contacto
                   </Link>
                 </p>
               </div>

@@ -1,28 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
-import HomePageTemplate from '../components/HomePageTemplate'
+import ObjetivosPageTemplate from '../components/ObjetivosPageTemplate'
 import Layout from '../components/Layout'
 
-const HomePage = ({data}) => {
+const ObjetivosPage = ({data}) => {
   const {frontmatter} = data.markdownRemark
-
+  console.log('frontmatter', frontmatter)
   return (
     <Layout>
-      <HomePageTemplate
+      <ObjetivosPageTemplate
         title={frontmatter.title}
         meta_title={frontmatter.meta_title}
         meta_description={frontmatter.meta_description}
-        heading={frontmatter.heading}
-        description={frontmatter.description}
-        offerings={frontmatter.offerings}
-        testimonials={frontmatter.testimonials}
+        descripcionObjetivoGeneral={frontmatter.descripcionObjetivoGeneral}
+        objetivosGenerales={frontmatter.objetivosGenerales}
+        objetivosEspecificos={frontmatter.objetivosEspecificos}
       />
     </Layout>
   )
 }
 
-HomePage.propTypes = {
+ObjetivosPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -30,28 +29,18 @@ HomePage.propTypes = {
   }),
 }
 
-export default HomePage
+export default ObjetivosPage
 
-export const pageQuery = graphql`
-  query IndexPage($id: String!) {
+export const objetivosPageQuery = graphql`
+  query ObjetivosPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        logo
         meta_title
         meta_description
-        heading
-        description
-        offerings {
-          blurbs {
-            image
-            text
-          }
-        }
-        testimonials {
-          author
-          quote
-        }
+        descripcionObjetivoGeneral
+        objetivosGenerales
+        objetivosEspecificos
       }
     }
   }

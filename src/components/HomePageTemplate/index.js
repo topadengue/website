@@ -35,7 +35,6 @@ const HomePageTemplate = ({
     </section>
     <section className='section section--gradient'>
       <div className='container'>
-
         <div className='section'>
           <div className='columns'>
             <div className='column is-10 is-offset-1'>
@@ -47,8 +46,12 @@ const HomePageTemplate = ({
                   <p>{description}</p>
                 </div>
                 <Offerings gridItems={offerings.blurbs} />
-                <h2 className='has-text-weight-semibold is-size-2'>Testimonials</h2>
-                <Testimonials testimonials={testimonials} />
+                <div>
+                  <iframe src='https://drive.google.com/file/d/1xTqibqwwpXP2xwrXiAtIaVMJWlI2iEV0/preview" width="640"
+                          height="480'/>
+                </div>
+                {/*<h2 className='has-text-weight-semibold is-size-2'>Testimonials</h2>*/}
+                {/*<Testimonials testimonials={testimonials} />*/}
               </div>
             </div>
           </div>

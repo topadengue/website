@@ -81,32 +81,35 @@ class ContactPageTemplate extends Component {
                 </label>
               </div>
               <div className='field'>
-                <label className='label'>Name</label>
+                <label className='label'>Nombre</label>
                 <div className='control'>
-                  <input className='input' type='text' placeholder='Full Name' name='name' id='name' onChange={this.handleChange} />
+                  <input className='input' type='text' placeholder='Nombre Completo' name='name' id='name'
+                         onChange={this.handleChange}/>
                 </div>
               </div>
 
               <div className='field'>
-                <label className='label'>Email</label>
+                <label className='label'>Correo</label>
                 <div className='control'>
-                  <input className='input' type='email' placeholder='Email' name='email' id='email' onChange={this.handleChange} />
+                  <input className='input' type='email' placeholder='Correo Electrónico' name='email' id='email'
+                         onChange={this.handleChange}/>
                 </div>
               </div>
 
               <div className='field'>
-                <label className='label'>Message</label>
+                <label className='label'>Mensaje</label>
                 <div className='control'>
-                  <textarea className='textarea' placeholder='Message' name='message' id='message' rows='6' onChange={this.handleChange} />
+                  <textarea className='textarea' placeholder='Mensaje' name='message' id='message' rows='6'
+                            onChange={this.handleChange}/>
                 </div>
               </div>
 
               <div className='field is-grouped is-pulled-right'>
                 <div className='control'>
-                  <button className='button is-text' type='reset'>Cancel</button>
+                  <button className='button is-text' type='reset'>Cancelar</button>
                 </div>
                 <div className='control'>
-                  <button className='button is-primary' type='submit'>Submit</button>
+                  <button className='button is-primary' type='submit'>Enviar</button>
                 </div>
               </div>
             </form>

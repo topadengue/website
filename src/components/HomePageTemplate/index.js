@@ -5,18 +5,18 @@ import Testimonials from '../Testimonials'
 import PropTypes from 'prop-types'
 
 const HomePageTemplate = ({
-  title,
-  heading,
-  description,
-  offerings,
-  meta_title,
-  meta_description,
-  testimonials,
-}) => (
+                            title,
+                            heading,
+                            description,
+                            offerings,
+                            meta_title,
+                            meta_description,
+                            testimonials,
+                          }) => (
   <div>
     <Helmet>
       <title>{meta_title}</title>
-      <meta name='description' content={meta_description} />
+      <meta name='description' content={meta_description}/>
     </Helmet>
     <section className='hero is-primary is-bold is-medium'>
       <div className='hero-body'>
@@ -45,10 +45,11 @@ const HomePageTemplate = ({
                   </h3>
                   <p>{description}</p>
                 </div>
-                <Offerings gridItems={offerings.blurbs} />
+                <Offerings gridItems={offerings.blurbs}/>
                 <div>
-                  <iframe src='https://drive.google.com/file/d/1xTqibqwwpXP2xwrXiAtIaVMJWlI2iEV0/preview" width="640"
-                          height="480'/>
+                  <iframe frameBorder="0" width="480" height="270" src="https://www.dailymotion.com/embed/video/x75o7fn"
+                          allowFullScreen allow="autoplay"></iframe>
+
                 </div>
                 {/*<h2 className='has-text-weight-semibold is-size-2'>Testimonials</h2>*/}
                 {/*<Testimonials testimonials={testimonials} />*/}

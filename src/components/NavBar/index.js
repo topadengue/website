@@ -43,7 +43,7 @@ const NavBar = ({toggleNavbar, isActive}) => (
             <Link className='navbar-item' to='/blog'>
               Equipo
             </Link>
-            <Link className='navbar-item' to='/blog'>
+            <Link className='navbar-item' to='/resultados'>
               Resultados
             </Link>
             <div className='navbar-item'>
